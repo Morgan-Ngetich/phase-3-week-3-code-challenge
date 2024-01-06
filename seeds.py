@@ -37,7 +37,7 @@ print(first_customer.full_name())
 
 # Test the favorite_restaurant method
 print("\nFavorite restaurant for the first customer:")
-fav_restaurant = first_customer.favorite_restaurant(session)
+fav_restaurant = first_customer.favorite_restaurant()
 if fav_restaurant:
     print(fav_restaurant.name)
 else:

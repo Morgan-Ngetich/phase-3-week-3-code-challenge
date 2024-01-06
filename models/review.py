@@ -17,3 +17,9 @@ class Review(Base):
 
     def full_review(self):
       return f"Review for ({self.restaurant.name}) by ({self.customer.full_name()}): [{self.star_rating}] stars."
+
+    def get_customer(self):
+      return self.customer  # Return the Customer instance for this review
+
+    def get_restaurant(self):
+      return self.restaurant  # Return the Restaurant instance for this review

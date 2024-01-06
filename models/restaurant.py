@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import relationship
 from .base import Base
 from .review import Review
+from .customer import Customer
 from . import Session
 
 class Restaurant(Base):
@@ -26,3 +27,8 @@ class Restaurant(Base):
 
     def all_reviews(self):
       return [f"Review for ({self.name}) by ({review.customer.full_name()}): [{review.star_rating}] stars." for review in self.reviews]
+
+    def restaurant_reviews(self):
+      return self.reviews  # Return a collection of all the reviews for the Restaurant
+
+
